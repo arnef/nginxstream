@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine as builder
 
 WORKDIR /app
 
@@ -17,6 +17,9 @@ RUN make
 USER root
 RUN make install
 
-# TODO clean up
+FROM alpine
+RUN apk add --no-cache pcre
+COPY --from=builder /etc/nginx /etc/nginx
+COPY --from=builder /usr/local/sbin/nginx /usr/local/sbin/nginx
 
 ENTRYPOINT [ "nginx", "-g", "daemon off;"]
