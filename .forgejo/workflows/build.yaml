@@ -4,6 +4,6 @@ jobs:
   containerize:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: build image
-        uses: actions/checkout@v3
         run: docker build --no-cache -t nginxstream .
