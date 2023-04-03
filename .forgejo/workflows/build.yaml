@@ -4,9 +4,6 @@ jobs:
   containerize:
     runs-on: ubuntu-latest
     steps:
-      - name: build image
-      - uses: actions/checkout@v3
-        run: ls
       - uses: docker/build-push-action@v2
       - name: Build container image
         with:
