@@ -4,6 +4,12 @@ jobs:
   containerize:
     runs-on: ubuntu-latest
     steps:
+      - name: Login to Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: git.arnef.de
+          username: ${{ forgejo.repository_owner }}
+          password: ${{ secrets.FORGEJO_TOKEN }}
       - name: Build container image
         uses: https://github.com/docker/build-push-action@v2
         with:
