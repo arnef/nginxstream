@@ -18,8 +18,12 @@ USER root
 RUN make install
 
 FROM alpine
+
 RUN apk add --no-cache pcre
+
 COPY --from=builder /etc/nginx /etc/nginx
 COPY --from=builder /usr/local/sbin/nginx /usr/local/sbin/nginx
+
+RUN mkdir /var/log/nginx
 
 ENTRYPOINT [ "nginx", "-g", "daemon off;"]
