@@ -15,6 +15,7 @@ jobs:
         with:
           file:  Dockerfile
           push: true
+          pull: true
           tags: |
             git.arnef.de/arnef/nginxstream:latest
             git.arnef.de/arnef/nginxstream:1.22
