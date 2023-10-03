@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 	gcc \
 	pcre-dev zlib-dev build-base openssl-dev
 
-RUN hg clone -b stable-1.22 https://hg.nginx.org/nginx 
+RUN hg clone -b stable-1.24 https://hg.nginx.org/nginx 
 
 WORKDIR /app/nginx
 COPY configure .

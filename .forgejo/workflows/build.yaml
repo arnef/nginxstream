@@ -18,4 +18,4 @@ jobs:
           pull: true
           tags: |
             git.arnef.de/arnef/nginxstream:latest
-            git.arnef.de/arnef/nginxstream:1.22
+            git.arnef.de/arnef/nginxstream:1.24
