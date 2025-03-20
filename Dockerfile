@@ -1,4 +1,4 @@
-FROM alpine as builder
+FROM alpine AS builder
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 	gcc \
 	pcre-dev zlib-dev build-base openssl-dev
 
-RUN hg clone -b stable-1.24 https://hg.nginx.org/nginx 
+RUN hg clone -b stable-1.26 https://hg.nginx.org/nginx 
 
 WORKDIR /app/nginx
 COPY configure .
