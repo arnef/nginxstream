@@ -3,11 +3,11 @@ FROM alpine AS builder
 WORKDIR /app
 
 RUN apk add --no-cache \
-	mercurial \
+	git \
 	gcc \
 	pcre-dev zlib-dev build-base openssl-dev
 
-RUN hg clone -b stable-1.28 https://hg.nginx.org/nginx 
+RUN git clone -b stable-1.28 https://github.com/nginx/nginx
 
 WORKDIR /app/nginx
 COPY configure .
